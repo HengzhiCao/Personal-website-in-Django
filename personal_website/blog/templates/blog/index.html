@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+    <style>
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Personal Website</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showContent('index')">Home</a>
+        <a href="#" onclick="showContent('about')">About</a>
+        <!-- <a href="#" onclick="showContent('blog')">Blog</a> -->
+        <a href="#" onclick="showContent('contact')">Contact</a>
+    </nav>
+    <div id="home" class="content active container">
+        <!-- <h2>Home</h2> -->
+        <p class="p">Welcome to my personal website. Here you can find information about me and my work.</p>
+    </div>
+    <div id="about" class="content ">
+        <h2>About Me</h2>
+        <p>My name is Hengzhi Cao, and I am a passionate about any relate the computer based in New York. I have dedicated myself to continuous learning and improvement in my career.</p>
+        
+        <h3>Background</h3>
+        <p>I graduated from Cuny Queens College with a degree in Computer Sciences. During my studies, I developed a keen interest in Full Stack Developer, which has shaped my career path significantly.</p>
+        
+        <h3>Skills and Expertise</h3>
+        <ul>
+            <li>Programming Languages: [Python, JavaScript, Java, Html, Css, Sql, C++, C#]</li>
+            <li>Frameworks and Tools: [Django, React, Docker, Spring boot, Vue]</li>
+            <li>Soft Skills: [Team Collaboration, Problem Solving, Effective Communication]</li>
+            <li>Other Skills: [Fluent in Chinese, Experienced in Execl]</li>
+        </ul>
+        
+        <h3>Interests and Hobbies</h3>
+        <p>Outside of work, I enjoy watching the Esports. Whether it's basktball, handout someone in the Outside, these activities provide a balance to my professional life and inspire my creativity.</p>
+        
+        
+        <h3>Personal Philosophy and Goals</h3>
+        <p>I believe in keep good emotions make good health . My goal is to continue advancing my skills and knowledge, contributing to meaningful projects that make a difference.</p>
+
+        <h3>The Link of Github Website</h3>
+        <p >
+            This is <a href="https://github.com/hengzhicao" target="_blank">The Link</a>.
+        </p>
+    </div>
+    <div id="blog" class="content">
+        <h2>Blog Posts</h2>
+        <p>Here are some of my blog posts.</p>
+        <!-- 你的博客文章列表代码可以放在这里 -->
+    </div>
+    <div id="contact" class="content">
+        <h2>Contact</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 My Personal Website</p>
+    </footer>
+    <script>
+        function showContent(id) {
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
